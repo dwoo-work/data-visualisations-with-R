@@ -26,21 +26,21 @@ Ensure that the file is in CSV UTF-8 format, to avoid UnicodeDecodeError later o
 ## Code Explanation
 
 Lines 6-7:  
-Load all of the libraries in a single line of code.
+This code ensures that all the necessary libraries are loaded and available for use in the project.
 ```r  
 required_libraries <- c("readr", "dplyr", "DT", "ggplot2")
 lapply(required_libraries, require, character.only = TRUE)
 ```
 
 Lines 9-10:  
-Read the CSV file (for ecom shipping data).
+This code is used to import and inspect the data from the sales file.
 ```r  
 sales <- read_csv("sales_data_sample_utf8.csv")
 glimpse(sales)
 ```
 
 Line 12:  
-Understand the data for each variable, before proceeding with data cleaning.
+This code is used to find unique values of each column of the sales dataframe, which helps to understand the variables and the data.
 ```r  
 unique_values <- apply(sales, 2, unique)
 ```
