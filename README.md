@@ -88,6 +88,8 @@ pl_summary <- sales %>%
   )
 ```
 
+![Table1](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/tables/table1.jpg)
+
 Lines 53-59:  
 Create a detailed data table to rank product lines by no_of_product_codes and median_pl_value.
 ```r  
@@ -99,6 +101,8 @@ order_table <- sales %>%
             options = list(pageLength = 10, scrollX = T),
             colnames = c("Year", "Month", "Product Line", "Product Code", "Order Number", "Order Value (US$)"))
 ```
+
+![Table2](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/tables/table2.gif)
 
 Lines 61-65:  
 Create a variable to calculate the median product code value.
@@ -138,6 +142,8 @@ overall_pc <- ggplot(median_pc_value, aes(x = reorder(PRODUCTCODE, median_pc_val
         plot.title = element_text(hjust = 0.5, vjust = 0.5))
 ```
 
+![Plot1](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/plots/plot1.jpg)
+
 Lines 91-100:  
 Create a bar chart to rank the median product code value, from highest to lowest (for Top 10).
 ```r  
@@ -152,6 +158,8 @@ top_10_pc <- median_pc_value %>%
   theme(legend.position = "none",
         plot.title = element_text(hjust = 0.5))
 ```
+
+![Plot2](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/plots/plot2.jpg)
 
 Lines 102-111:  
 reate a bar chart to rank the median product code value, from highest to lowest (for Bottom 10).
@@ -168,6 +176,8 @@ bottom_10_pc <- median_pc_value %>%
         plot.title = element_text(hjust = 0.5))
 ```
 
+![Plot3](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/plots/plot3.jpg)
+
 Lines 113-122:  
 Create a scatterplot which shows each product code in two dimensions (product line, and median product code value).
 ```r  
@@ -182,6 +192,8 @@ scatterplot_pc <- ggplot(sales, aes(x = product_line, y = median_pc_value, color
         plot.title = element_text(hjust = 0.5) +
         scale_color_brewer(type = "qual"))
 ```
+
+![Plot4](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/plots/plot4.jpg)
 
 Lines 124-134:  
 Create a pie chart to understand the Product Line by Total Sales (in %).
@@ -198,6 +210,8 @@ piechart_pl <- ggplot(total_pl_value, aes(x = "", y = total_pl_value, fill = pro
   geom_text(aes(label = paste0(round(total_pl_value_pct, 1), "%")), 
             position = position_stack(vjust = 0.5))
 ```
+
+![Plot5](https://github.com/dwoo-work/data-visualisations-with-R/blob/main/plots/plot5.jpg)
 
 ## Credit
 
