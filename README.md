@@ -25,13 +25,11 @@ Ensure that the file is in CSV UTF-8 format, to avoid UnicodeDecodeError later o
 
 ## Code Explanation
 
-Lines 5-12:  
-Lorem Ipsum Lorem Ipsum
-```python   
-Lorem Ipsum
-Lorem Ipsum
-Lorem Ipsum
-Lorem Ipsum
+Lines 1-12:  
+Load all of the libraries in a single line of code.
+```r  
+required_libraries <- c("readr", "dplyr", "DT", "ggplot2")
+lapply(required_libraries, require, character.only = TRUE)
 ```
 
 ## Credit
